@@ -7,7 +7,7 @@ send and receive secure, OpenPGP encrypted and signed messages.
 Important
 -------
 
-GPGMail currently doesn't support macOS Sierra (10.12). We're actively working on it.
+This is a simple fork that doesn't need an activation code.
 Follow us on [Twitter](https://twitter.com/gpgtools) for updates.
 
 Updates
@@ -30,9 +30,11 @@ You can either build your own version, use one from [homebrew](http://brew.sh) o
 Build
 -----
 
+Easiest way to get this is to install the official release from https://gpgtools.org/ and after that build your own GPGMail.mailbundle:
+
 #### Clone the repository
 ```bash
-git clone https://github.com/GPGTools/GPGMail.git
+git clone --single-branch -b mojave https://github.com/aodw/GPGMail.git
 cd GPGMail
 ```
 
@@ -47,16 +49,9 @@ git clone https://github.com/GPGTools/Libmacgpg.git
 cd ..
 ```
 
-#### Build
-```bash
-make
-```
+#### Build and Install
 
-#### Install
-Copy Libmacgpg.framework from Dependencies/Libmacgpg/build/Release/ to ~/Library/Frameworks.
-
-After that copy the GPGMail.mailbundle file from build/Releases/GPGMail.mailbundle to ~/Libray/Mail/Bundles, re-start Mail.app and enjoy.
-
+Open the project in XCode, Run, restart Apple Mail and enjoy! Gotta Love GPL!
 
 System Requirements
 -------------------
