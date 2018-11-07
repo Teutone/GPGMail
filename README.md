@@ -46,10 +46,22 @@ It's necessary to clone the Libmacgpg repository first, before building GPGMail.
 ```bash
 cd Dependencies
 git clone https://github.com/GPGTools/Libmacgpg.git
+make
 cd ..
 ```
 
-#### Build and Install
+#### Build
+```bash
+make
+```
+
+#### Install
+Quit `Mail.app` and run this commands as root (`sudo -i`)
+```bash
+GPGMAIL=$(ls -1rd /Library/Application\ Support/GPGTools/GPGMail/* | head -1)
+rm -rf $GPGMAIL && cp -a build/Release/GPGMail.mailbundle $GPGMAIL
+```
+
 
 Open the project in XCode, Run, restart Apple Mail and enjoy! Gotta Love GPL!
 
